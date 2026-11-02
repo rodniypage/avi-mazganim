@@ -98,6 +98,7 @@ section { padding-block: clamp(56px, 8vw, 96px); }
 .hero-photo { position: relative; min-width: 0; }
 .hero-photo img {
   width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 35%;
+  max-height: min(78vh, 640px);
   border-radius: 28px; box-shadow: 0 30px 60px rgba(10, 37, 64, .22);
 }
 .hero-photo::before {
