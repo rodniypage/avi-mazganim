@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rodniypage.github.io/avi-mazganim/sitemap.xml

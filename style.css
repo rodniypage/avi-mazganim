@@ -153,7 +153,7 @@ button { width: 100%; background: #00BFFF; color: white; border: none; padding: 
   margin-bottom: 15px;
 }
 
-.feature-item h3 {
+.feature-item h2, .feature-item h3 {
   color: #2c3e50;
   font-size: 1.5rem;
   margin-bottom: 15px;
@@ -355,3 +355,9 @@ section {
 
 
   
+
+/* --- תיקונים: נגישות, וואטסאפ, טקסט מותגים --- */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+.whatsapp { height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,.25); z-index: 1000; }
+.brands-text { text-align: center; padding: 30px 20px; max-width: 800px; margin: 0 auto; }
+.form-note { font-size: 14px; margin-bottom: 12px; opacity: .8; }

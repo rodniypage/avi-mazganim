@@ -1,14 +1,19 @@
+// אנימציית הופעה לשירותים
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      // כשהשירותים נכנסים למסך - תוסיף את האנימציה
-      entry.target.classList.add('active');
-    } else {
-      // כשיוצאים מהאזור - תעלים אותם שוב כדי שהאפקט יחזור
-      entry.target.classList.remove('active');
-    }
+    entry.target.classList.toggle('active', entry.isIntersecting);
   });
-}, { threshold: 0.15 }); // האפקט יתחיל כש-15% מהאזור נראה במסך
-
-// מפעיל את הבדיקה על כל מה שסימנו ב-reveal
+}, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+// הטופס שולח את הפרטים לוואטסאפ של אבי (אין שרת – כך שום פרט לא "נעלם")
+const form = document.getElementById('lead-form');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('lead-name').value.trim();
+    const phone = document.getElementById('lead-phone').value.trim();
+    const text = `שלום אבי, הגעתי מהאתר. שמי ${name}, הטלפון שלי ${phone}. אשמח שתחזור אליי.`;
+    window.open('https://wa.me/972505853249?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+}
